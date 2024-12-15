@@ -1,0 +1,146 @@
+<html>
+   <head>
+<title> Titanic Retro Website</title>
+<link href="style.css" rel="stylesheet"/>
+   </head>
+   <body>
+    <main>
+        <section>
+            <div class="marquee">
+                <p>Breaking News: Titanic, the Ship of Dreams, Sets Sail...</p>
+            </div>
+            
+        </section>
+        <section>
+            <h2>Titanic:A voyage to Remember</h2>
+        </section>
+        <section class="background">
+            <img src="https://i.pinimg.com/originals/cd/17/4f/cd174f464e1cba293f151cbf6c508061.jpg" alt="titanic ship"/>
+        </section>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="quote">
+                    <p>"I'm the king of the world!" - Jack Dawson</p>
+                </div>
+                <div class="quote">
+                    <p>"Never let go, Jack. I'll never let go." - Rose DeWitt Bukater</p>
+                </div>
+                <div class="quote">
+                    <p>"A woman's heart is a deep ocean of secrets." - Old Rose</p>
+                </div>
+                <div class="quote">
+                    <p>"You jump, I jump." - Jack Dawson</p>
+                </div>
+            </div>
+            <!-- Optional navigation buttons -->
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        
+        <section>
+            <h3>Meet the Cast</h3>
+        <div class="cast">
+            
+            <img src="https://i.pinimg.com/originals/56/dc/05/56dc0577461524d43be153a8b442844e.jpg" alt="Jack Dawson" class="flex-image"/>
+            <h4>Leonardo DiCaprio as Jack Dawson</h4>
+            <img src="https://images6.fanpop.com/image/photos/32700000/BEAUTY-rose-dewitt-bukater-32730662-498-750.jpg" alt="Rose Dewitt Bukater" class="flex-image"/>
+            <h4>Kate Winslet as Rose Dewitt Bukater</h4>
+            <img src="https://c8.alamy.com/compde/phk4px/portrait-von-edward-john-smith-kapitan-der-titanic-phk4px.jpg" alt="Captain Smith" class="flex-image"/>
+            <h4>Bernard Hill as Captain Smith </h4>
+            <img src="https://i.pinimg.com/736x/e4/07/2e/e4072ee73fc46b2923c9d55c508161c5.jpg" alt="Cal Hockley" class="flex-image"/>
+            <h4>Billy Zane as Cal Hockley</h4>
+            <img src="https://lwlies.com/wp-content/uploads/2022/12/Old-Rose.jpg" alt="Old Rose" class="flex-image"/>
+            <h4>Gloria Stuart as Old Rose </h4>
+          
+        </div>
+    </section>
+   <script>
+
+   
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.quote'); // Get all quote elements
+    
+    function moveSlide(step) {
+        currentIndex += step;
+        if (currentIndex < 0) {
+            currentIndex = slides.length - 1; // Loop to the last slide
+        } else if (currentIndex >= slides.length) {
+            currentIndex = 0; // Loop to the first slide
+        }
+    
+        updateCarousel(); // Update the carousel with the new slide
+    }
+    
+    function updateCarousel() {
+        const newTransformValue = -currentIndex * 100; // Move the carousel by the percentage of the current slide
+        document.querySelector('.carousel-slide').style.transform = `translateX(${newTransformValue}%)`;
+    }
+    
+    // Optional: Automatic sliding every 5 seconds
+    setInterval(() => {
+        moveSlide(1);
+    }, 5000);
+</script>
+        <div class="retro-music-player">
+            <!-- Audio Player -->
+            <audio controls id="music" src="C:\Users\ogunr\OneDrive\Desktop\Hackathons\codedex\Titanic correct.mp3" loop>
+                Your browser does not support the audio element.
+            </audio>
+            
+            <!-- Retro Play Button -->
+            <button onclick="playMusic()" class="retro-button">Play Music</button>
+            
+            <!-- Retro Pause Button -->
+            <button onclick="pauseMusic()" class="retro-button">Pause Music</button>
+        </div>
+        <script>
+  // Get the audio element
+  const audio = document.getElementById('music');
+
+// Function to play music
+function playMusic() {
+    audio.play();
+}
+
+ //Function to pause music
+function pauseMusic() {
+     audio.pause();
+}
+        </script>
+      
+
+      
+     
+       </section>
+           <section>
+            <div class="trivia-box">
+                <h2>Did You Know?</h2>
+                <ul>
+                    <li>The Titanic was 882 feet long and could carry 3,300 passengers.</li>
+                    <li>It sank on April 15, 1912, after hitting an iceberg.</li>
+                    <li>There were only 20 lifeboats, far fewer than needed for all passengers.</li>
+                    <li>The Titanic movie won 11 Academy Awards, including Best Picture.</li>
+                </ul>
+            </div>
+            
+           </section>
+
+           <section>
+            <div class="typewriter">
+                <p>Relive the epic tale of the Titanic, the ship of dreams...</p>
+            </div>
+            
+        </section>
+        
+           <section>
+            <a href="https://www.youtube.com/watch?v=51EN2VrdpAo" target="self">Watch Full Movie here</a>
+        </section>
+            <footer>
+                &copy; 2024 Titanic Retro Website | Designed with a touch of nostalgia.
+            </footer>
+      
+    </main>
+   
+   </body>
+
+</html>
